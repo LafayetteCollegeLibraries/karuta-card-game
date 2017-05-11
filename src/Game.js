@@ -31,22 +31,56 @@ module.exports = class Game extends Component {
 
   restartGame () {
     this.setState(prev => ({
-      cards: shuffle(prev.cards),
+      cards: this.shuffle(prev.cards),
       answer: prev.cards[Math.floor(Math.random() * prev.cards.length)],
     }))
+  }
+
+  shuffle (input) {
+    const areEqual = (a, b) => {
+      for (let i = 0; i < a.length; i++) {
+        if (a[i] === b[i]) {
+          return true
+        }
+
+        return false
+      }
+    }
+
+    let output
+
+    do {
+      output = shuffle(input)
+    } while (areEqual(input, output))
+
+    return output
   }
 
   render () {
     const cardWidth = this.props.cardWidth || 150
 
+    const style = {
+      container: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+      },
+
+      recitation: {
+        display: 'block',
+        marginBottom: '50px',
+      },
+    }
+
     return (
-      <div>
-        <div key="target-card">
-          <Card
-            data={this.state.answer}
-            width={cardWidth}
-          />
-        </div>
+      <div style={style.container}>
+        <Card
+          data={this.state.answer}
+          width={cardWidth}
+          style={style.recitation}
+          type="recitation"
+        />
 
         <CardContainer
           cardWidth={cardWidth}

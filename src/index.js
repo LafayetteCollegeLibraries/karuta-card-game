@@ -5,11 +5,9 @@ const Game = require('./Game')
 
 const App = props => {
   return (
-    <div>
-      <Game
-        cards={['cat', 'dog', 'mouse', 'frog', 'bird', 'shark']}
-      />
-    </div>
+    <Game
+      cards={['e', 'hi', 'i', 'ri', 'wo', 'yo']}
+    />
   )
 }
 
