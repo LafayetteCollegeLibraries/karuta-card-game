@@ -11,15 +11,15 @@ module.exports = class Game extends Component {
     this.handleCardClick = this.handleCardClick.bind(this)
     this.restartGame = this.restartGame.bind(this)
 
-    this.state = {
-      cards: props.cards || []
-    }
+    this.state = {}
+  }
 
+  componentDidMount () {
     this.restartGame()
   }
 
-  handleCardClick (data) {
-    if (data === this.state.answer) {
+  handleCardClick (idx) {
+    if (idx === this.state.answerIdx) {
       alert('You matched! Great job!')
       this.restartGame()
     }
@@ -30,10 +30,13 @@ module.exports = class Game extends Component {
   }
 
   restartGame () {
-    this.setState(prev => ({
-      cards: this.shuffle(prev.cards),
-      answer: prev.cards[Math.floor(Math.random() * prev.cards.length)],
-    }))
+    const shuffled = this.shuffle(this.props.cards)
+      .slice(0, this.props.numberOfCards || 6)
+
+    this.setState({
+      cards: shuffled,
+      answerIdx: Math.floor(Math.random() * shuffled.length),
+    })
   }
 
   shuffle (input) {
@@ -57,6 +60,10 @@ module.exports = class Game extends Component {
   }
 
   render () {
+    if (this.state.cards === undefined) {
+      return null
+    }
+
     const cardWidth = this.props.cardWidth || 150
 
     const style = {
@@ -73,10 +80,12 @@ module.exports = class Game extends Component {
       },
     }
 
+    const { cards, answerIdx } = this.state
+
     return (
       <div style={style.container}>
         <Card
-          data={this.state.answer}
+          data={cards[answerIdx]}
           width={cardWidth}
           style={style.recitation}
           type="recitation"
@@ -84,7 +93,7 @@ module.exports = class Game extends Component {
 
         <CardContainer
           cardWidth={cardWidth}
-          data={this.state.cards}
+          data={cards}
           onCardClick={this.handleCardClick}
         />
       </div>

@@ -1,0 +1,28 @@
+{
+  "cards": [
+    {
+      "grab": "/assets/cards/e-grab.png",
+      "recitation": "/assets/cards/e-recitation.png"
+    },
+    {
+      "grab": "/assets/cards/hi-grab.png",
+      "recitation": "/assets/cards/hi-recitation.png"
+    },
+    {
+      "grab": "/assets/cards/i-grab.png",
+      "recitation": "/assets/cards/i-recitation.png"
+    },
+    {
+      "grab": "/assets/cards/ri-grab.png",
+      "recitation": "/assets/cards/ri-recitation.png"
+    },
+    {
+      "grab": "/assets/cards/wo-grab.png",
+      "recitation": "/assets/cards/wo-recitation.png"
+    },
+    {
+      "grab": "/assets/cards/yo-grab.png",
+      "recitation": "/assets/cards/yo-recitation.png"
+    }
+  ]
+}

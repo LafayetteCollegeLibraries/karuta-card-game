@@ -13,7 +13,7 @@ module.exports = function Card (props) {
     container: Object.assign({
       alignItems: 'center',
       backgroundColor: cardBackgroundColor,
-      backgroundImage: `url("/assets/cards/${data}-${type}.png")`,
+      backgroundImage: `url("${data[type]}")`,
       backgroundSize: 'contain',
       border: `${width * .04}px solid ${borderColor}`,
       borderRadius: '5px',

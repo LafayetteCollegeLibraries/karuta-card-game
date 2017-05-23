@@ -1,20 +1,7 @@
 const { h } = require('preact')
 const Card = require('./Card')
-const shuffle = require('lodash.shuffle')
 
 module.exports = function CardContainer (props) {
-  const renderCards = () => {
-    return shuffle(props.data).map((data, idx) => (
-      <Card
-        data={data}
-        key={`card-${data}`}
-        onClick={() => props.onCardClick(data)}
-        type="grab"
-        width={props.cardWidth}
-      />
-    ))
-  }
-
   const styles = {
     container: {
       display: 'flex',
@@ -25,7 +12,17 @@ module.exports = function CardContainer (props) {
 
   return (
     <div style={styles.container}>
-      {renderCards()}
+      {
+        props.data.map((data, idx) => (
+          <Card
+            data={data}
+            key={`card-${data}-${idx}`}
+            onClick={() => props.onCardClick(idx, data)}
+            type="grab"
+            width={props.cardWidth}
+          />
+        ))
+      }
     </div>
   )
 }
