@@ -11,4 +11,4 @@ const App = props => {
   )
 }
 
-render(<App/>, document.querySelector('#app'))
+render(<App/>, document.querySelector('#karuta-game-app'))
