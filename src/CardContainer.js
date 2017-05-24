@@ -16,7 +16,7 @@ module.exports = function CardContainer (props) {
         props.data.map((data, idx) => (
           <Card
             data={data}
-            key={`card-${data}-${idx}`}
+            key={`card-${idx}`}
             onClick={() => props.onCardClick(idx, data)}
             type="grab"
             width={props.cardWidth}
