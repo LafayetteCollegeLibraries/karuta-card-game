@@ -33,8 +33,6 @@ module.exports = function Card (props) {
   }
 
   return (
-    <div className="card" onClick={props.onClick} style={styles.container}>
-      {/* <span style={styles.data}>{props.data}</span> */}
-    </div>
+    <div className="card" onClick={props.onClick} style={styles.container} />
   )
 }
