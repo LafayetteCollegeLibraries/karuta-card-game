@@ -1,4 +1,5 @@
 {
+  "numberOfCards": 10,
   "cards": [
     {
       "id": "a",
@@ -57,14 +58,8 @@
     {
       "id": "ta",
       "url": "http://exhibits.lafayette.edu/karuta/admin/files/show/429",
-      "grab": "http://exhibits.lafayette.edu/karuta/files/original/19c500267e139c86b2f68df7abbb0efb.png",
-      "recitation": "http://exhibits.lafayette.edu/karuta/files/original/8e24ea4e406998eda40e522faeefcb92.png"
-    },
-    {
-      "id": "tsu",
-      "url": "http://exhibits.lafayette.edu/karuta/admin/files/show/431",
       "grab": "http://exhibits.lafayette.edu/karuta/files/original/cb8698e6f85cb2d5f8b59afc3b4ad01a.png",
-      "recitation": "http://exhibits.lafayette.edu/karuta/files/original/b44c08b06190e59027c9a680467d2fc7.png"
+      "recitation": "http://exhibits.lafayette.edu/karuta/files/original/8e24ea4e406998eda40e522faeefcb92.png"
     },
     {
       "id": "wi",
